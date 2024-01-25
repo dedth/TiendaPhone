@@ -1,0 +1,78 @@
+
+<div class="col-md-15 sidebar "><br>
+  <div class="text-white perfil ">
+  <h2 class="text-white navbar-brand ">Bienvenido</h2>
+  <p><i class="fa fa-user-o" aria-hidden="true"></i> {{ nombreUsuario }}!</p>
+  </div><br>
+  <hr><br>
+
+  <ul class="nav flex-column">
+   <!--  <li class="nav-item"><br>
+      <a class="nav-link active text-white" routerLink="/dashboard">
+        <i class="fa fa-home  "></i> Inicio
+      </a><br>
+    </li> -->
+    <li class="nav-item">
+      <a class="nav-link text-white" routerLink="/dashboard/products">
+        <i class="fa fa-cube "></i> Productos
+      </a><br>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" routerLink="/dashboard/order">
+        <i class="fa fa-shopping-cart "></i> Ordenes
+      </a><br>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" routerLink="/dashboard/comentarios">
+        <i class="fa fa-comments "></i> Coment
+      </a><br>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" routerLink="/dashboard/contactanos">
+        <i class="fa fa-envelope "></i> Mensajes
+      </a><br>
+    </li>
+  
+    <li class="nav-item ">
+      <a class="nav-link text-white" routerLink="/" *ngIf="isLogged" (click)="logOut()">
+        <i class="fa fa-sign-out "></i> Salir
+      </a>
+    </li>
+  </ul>
+ 
+</div>
+
+
+
+<style>
+
+
+
+.sidebar{
+  background: #383a57;
+  width: 110%;
+  height:183%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+*{
+  margin: 0;
+  border: 0;
+}
+i:hover{
+  color: rgb(28, 126, 255);
+}
+.perfil{
+  margin-left: 17px;
+}
+hr {
+  
+  height: 3px;
+  width: 100%;
+  background-color: rgb(250, 250, 250);
+}
+
+
+
+
+
+</style>

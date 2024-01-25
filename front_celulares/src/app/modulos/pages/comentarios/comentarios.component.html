@@ -1,0 +1,38 @@
+
+<form class="form-horizontal shadow mt-4 pb-4
+ container bg-light text-dark
+
+" role="form" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+  <h1 class="tittles-pages">Dejanos tu comentario</h1>
+  <div class="form-group">
+    <label class="control-label col-sm-2">Tu nombre</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control input-form-contact" placeholder="Escribe tu nombre"
+             [(ngModel)]="nombre" name="nombre" required>
+      <div *ngIf="f.submitted && f.controls['nombre'].hasError('required')" class="text-danger">
+        El nombre es obligatorio.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">Tu Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control input-form-contact" placeholder="Escribe tu Email"
+             [(ngModel)]="email" name="email" required>
+      <div *ngIf="f.submitted && f.controls['email'].hasError('required')" class="text-danger">
+        El correo electrónico es obligatorio.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">Tu mensaje</label>
+    <div class="col-sm-10">
+      <textarea class="form-control input-form-contact" rows="3" placeholder="Escribe tu mensaje"
+                [(ngModel)]="comentario" name="comentario" required></textarea>
+      <div *ngIf="f.submitted && f.controls['mensage'].hasError('required')" class="text-danger">
+        El comentario es obligatorio.
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Enviar</button>
+</form>
